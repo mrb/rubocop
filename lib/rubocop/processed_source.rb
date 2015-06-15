@@ -95,7 +95,7 @@ module RuboCop
     def create_parser
       builder = Astrolabe::Builder.new
 
-      Parser::CurrentRuby.new(builder).tap do |parser|
+      Parser::MacRuby.new(builder).tap do |parser|
         # On JRuby and Rubinius, there's a risk that we hang in tokenize() if we
         # don't set the all errors as fatal flag. The problem is caused by a bug
         # in Racc that is discussed in issue #93 of the whitequark/parser
